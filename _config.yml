@@ -5,7 +5,7 @@ keyword: 'Hin, 小站'    # 关键词
 url: 'https://hintryer.github.io/'    # 站点域名
 baseurl: ''     # 可选，站点子目录（适用于部署在子目录）
 favicon: '/favicon.ico'    # 站点浏览器图标，可以是外部链接
-gray: false  # 全站变灰，可用于国家公祭日等哀悼场合。
+gray: false  # 全站变灰，可用于国家公祭日等哀悼场合。1
 
 #### 博主信息
 author: 'Hin'     # 作者
