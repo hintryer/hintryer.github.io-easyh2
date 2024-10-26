@@ -5,9 +5,345 @@
     <description>时间太瘦，指缝太宽。</description>
     <link>https://hintryer.github.io///</link>
     <atom:link href="https://hintryer.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 26 Oct 2024 21:41:07 +0900</pubDate>
-    <lastBuildDate>Sat, 26 Oct 2024 21:41:07 +0900</lastBuildDate>
+    <pubDate>Sat, 26 Oct 2024 21:45:03 +0900</pubDate>
+    <lastBuildDate>Sat, 26 Oct 2024 21:45:03 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>git总结</title>
+        <description>&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;提交说明&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rm origin
+git remote add origin git@gitee.com:mroph/novel.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull --rebase origin master
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;详细步骤&quot;&gt;详细步骤&lt;/h2&gt;
+
+&lt;h3 id=&quot;初始化&quot;&gt;初始化&lt;/h3&gt;
+
+&lt;h4 id=&quot;定位工作目录&quot;&gt;定位工作目录&lt;/h4&gt;
+
+&lt;p&gt;打开 Git Bash 终端，使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt;命令加上要切换的路径，例如：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd /c/Users/username/Documents&lt;/code&gt;；按下回车键，即可切换到指定的路径。需要注意的是路径中需要使用正斜杠 / 分隔路径，而不是反斜杠 \。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pwd&lt;/code&gt;可以显示当前路径&lt;/p&gt;
+
+&lt;h4 id=&quot;初始化用户信息&quot;&gt;初始化用户信息&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global user.name &apos;better&apos;
+git config --global user.email &apos;1063266220@qq.com&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;创建本地仓库&quot;&gt;创建本地仓库&lt;/h3&gt;
+
+&lt;p&gt;创建本地仓库的方法有两种：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一种是创建全新的仓库：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;，会在当前目录初始化创建仓库，也可指定目录：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init [文件目录]&lt;/code&gt;执行命令后，如下显示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;创建完多出了一个被隐藏的.git 目录，这就是本地仓库 Git 的工作场所，而且是一个空的仓库（empty Git repository）。没事千万不要手动修改这个目录里面的文件，不然改乱了，就把 Git 仓库给破坏了。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;另一种是克隆远程仓库：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone [url]&lt;/code&gt;
+克隆远程仓库，如在 github 上创建的仓库“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://github.com/kwonganding/KWebNote.git&lt;/code&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone &apos;https://github.com/kwonganding/KWebNote.git&apos;
+Cloning into &apos;KWebNote&apos;...
+remote: Enumerating objects: 108, done.
+remote: Counting objects: 100% (108/108), done.
+remote: Compressing objects: 100% (60/60), done.
+remote: Total 108 (delta 48), reused 88 (delta 34), pack-reused 0
+Receiving objects: 100% (108/108), 9.36 KiB | 736.00 KiB/s, done.
+Resolving deltas: 100% (48/48), done.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;会在当前目录下创建“KWebNote”项目目录。&lt;/p&gt;
+
+&lt;h3 id=&quot;暂存区-add&quot;&gt;暂存区 add&lt;/h3&gt;
+
+&lt;p&gt;把工作区变化放到暂存区中，执行命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt;可以一次性把所有变化文件放入暂存区&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;执行上面的命令，没有任何显示，说明添加成功。也可以先执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git rm --cached &amp;lt;file&amp;gt;&lt;/code&gt;命令将指定的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;file&lt;/code&gt;从当前的暂存区中删除但保留文件在本地工作目录中。
+| &lt;strong&gt;指令&lt;/strong&gt; | &lt;strong&gt;描述&lt;/strong&gt; |
+| — | — |
+| git add [file1] [file2] | 添加文件到暂存区，包括修改的文件、新增的文件 |
+| git add [dir] | 同上，添加目录到暂存区，包括子目录 |
+| git add . | 同上，添加&lt;strong&gt;所有&lt;/strong&gt;修改、新增文件（未跟踪）到暂存区 |
+| git rm [file] | 删除工作区文件，并且将这次删除放入暂存区 |
+|git rm –cached [file]|删除放入暂存区 ，但该文件会保留在工作区|&lt;/p&gt;
+
+&lt;h3 id=&quot;提交-commit-记录&quot;&gt;提交 commit-记录&lt;/h3&gt;
+
+&lt;p&gt;把暂存区内容提交到版本库，命令如下（此处文字说明可以不加引号）&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &apos;提交的内容说明&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;执行上面的命令，如下显示&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m &quot;wrote a readme file&quot;
+[master (root-commit) eaadf4e] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;命令执行成功后会告诉你，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 file changed&lt;/code&gt;：1 个文件被改动（我们新添加的 readme.txt 文件）；&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2 insertions&lt;/code&gt;：插入了两行内容（readme.txt 有两行内容）。
+以上命令相当于存档了一次，在版本库中产生一次提交记录并生成版本号。本次存档，不耽误我们在工作区 (项目文件夹) 下继续编写项目&lt;/p&gt;
+
+&lt;p&gt;如果改的代码过多，忘记改过哪些了，可以运行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git status&lt;/code&gt;命令来查看 git 仓库变化，只能看未提交的所有变更的文件状态
+| &lt;strong&gt;指令&lt;/strong&gt; | &lt;strong&gt;描述&lt;/strong&gt; |
+| — | — |
+| git commit -m ‘说明’ | 提交变更，参数&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-m&lt;/code&gt;设置提交的描述信息，应该正确提交，不带该参数会进入说明编辑模式 |
+| git commit -a | 参数&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-a&lt;/code&gt;，表示直接从工作区提交到版本库，略过了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add&lt;/code&gt;步骤，不包括新增的文件 |
+| git commit [file] | 提交暂存区的指定文件到仓库区 |
+| git commit –amend -m | 使用一次新的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commit&lt;/code&gt;，替代上一次提交，会修改&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commit&lt;/code&gt;的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt;值（id） |
+| git &lt;strong&gt;reflog&lt;/strong&gt; | 查看所有可用的历史版本记录（实际是 HEAD 变更记录），包含被回退的记录（&lt;strong&gt;重要&lt;/strong&gt;） |
+| git status | 查看本地仓库状态，比较常用的指令，加参数&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-s&lt;/code&gt;简洁模式 |&lt;/p&gt;
+
+&lt;h3 id=&quot;将本地代码仓库关联到-gitee-上git-remote-add&quot;&gt;将本地代码仓库关联到 gitee 上&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一次提交直接执行以下命令关联&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git remote add origin 仓库地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;此后，每次本地提交后，只要有必要，就可以使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin master&lt;/code&gt;推送最新修改；&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第二次提交先删除，再关联&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rm origin
+git remote add origin 仓库地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;否则会在使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add&lt;/code&gt;时报错：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fatal: remote origin already exists.&lt;/code&gt;，说明本地库已经关联了一个名叫&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;的远程库，&lt;/p&gt;
+
+&lt;h3 id=&quot;将代码由本地仓库上传到-gitee-远程仓库&quot;&gt;将代码由本地仓库上传到 gitee 远程仓库&lt;/h3&gt;
+
+&lt;p&gt;执行以下命令，先拉取后推送&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull --rebase origin master
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;远程仓库指令&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git clone [git 地址]&lt;/td&gt;
+      &lt;td&gt;从远程仓库克隆到本地（当前目录）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git remote -v&lt;/td&gt;
+      &lt;td&gt;查看所有远程仓库，不带参数&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-v&lt;/code&gt;只显示名称&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git remote show [remote]&lt;/td&gt;
+      &lt;td&gt;显示某个远程仓库的信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;git remote add [name] [url]&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;增加一个新的远程仓库，并命名&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git remote rename [old] [new]&lt;/td&gt;
+      &lt;td&gt;修改远程仓库名称&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;git pull [remote] [branch]&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;取回远程仓库的变化，并与本地版本合并&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;git pull&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;同上，针对当前分支&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git fetch [remote]&lt;/td&gt;
+      &lt;td&gt;获取远程仓库的所有变动到本地仓库，不会自动合并！需要手动合并&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;git push&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;推送当前分支到远程仓库&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git push [remote] [branch]&lt;/td&gt;
+      &lt;td&gt;推送本地当前分支到远程仓库的指定分支&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git push [remote] –force/-f&lt;/td&gt;
+      &lt;td&gt;强行推送当前分支到远程仓库，即使有冲突，⚠️ 很危险！&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git push [remote] –all&lt;/td&gt;
+      &lt;td&gt;推送所有分支到远程仓库&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git push –u&lt;/td&gt;
+      &lt;td&gt;参数&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;–u&lt;/code&gt;表示与远程分支建立关联，第一次执行的时候用，后面就不需要了&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git remote rm [remote-name]&lt;/td&gt;
+      &lt;td&gt;删除远程仓库&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;git pull –rebase&lt;/td&gt;
+      &lt;td&gt;使用 rebase 的模式进行合并&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;错误&quot;&gt;错误&lt;/h1&gt;
+
+&lt;h2 id=&quot;git-init-报错&quot;&gt;git init 报错&lt;/h2&gt;
+
+&lt;p&gt;当我们在一个目录下初始化 git 时 可能会出现这个报错，&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;warning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;templates&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/home/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ja&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;templates&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Using&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;master&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;initial&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;subject&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;To&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;initial&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repositories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;which&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;suppress&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;warning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;defaultBranch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Names&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commonly&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;chosen&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instead&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;master&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;trunk&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;and&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;just&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;created&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;renamed&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;via&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;hint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Initialized&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;empty&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repository&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/tmp/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.git/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt; 执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global init.defaultBranch master&lt;/code&gt; 命令，设置默认分支为 master 级别就不会再报错了&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;defaultBranch&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;master&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;git-add-报错&quot;&gt;git add .报错&lt;/h2&gt;
+
+&lt;p&gt;git add .报错 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;warning: adding embedded git repository\:xxxxxxxxxx&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;执行- $ git add .命令时出现出现这个报错&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;warning: adding embedded git repository:xxxxxxxxxx
+hint: You&lt;span class=&quot;s1&quot;&gt;&apos;ve added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: git submodule add &amp;lt;url&amp;gt;xxxxxxxxxx
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: git rm --cached   xxxx
+hint:
+hint: See &quot;git help submodule&quot; for more information.
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt; 使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; 时，出现上述错误。是因为在当前 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; 仓库中同时包含有另一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;仓库。如当前仓库目录下的子文件夹内又是一个仓库。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt; 删除子文件夹的.git 文件， 重新执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-remote-add时报错&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add&lt;/code&gt;时报错：&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+fatal: remote origin already exists.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这说明本地库已经关联了一个名叫&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;的远程库，可以用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote rm &amp;lt;name&amp;gt;&lt;/code&gt;命令已有的远程库。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote -v
+origin	git@github.com:michaelliao/learngit.git (fetch)
+origin	git@github.com:michaelliao/learngit.git (push)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;可以看到，本地库已经关联了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;的远程库，并且，该远程库指向 GitHub。我们可以删除已有的 GitHub 远程库再关联 Gitee 的远程库&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote rm origin
+git remote add origin 仓库地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;git-上传报错&quot;&gt;git 上传报错&lt;/h2&gt;
+
+&lt;h3 id=&quot;第一个问题&quot;&gt;第一个问题&lt;/h3&gt;
+
+&lt;p&gt;上传步骤：&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -m &quot;提示消息&quot;&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;出错：&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;! [rejected] master -&amp;gt; master (fetch first) error: failed to push some refs to &apos; 。。。&apos;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;出现这个问题是因为 github 中的 README.md 文件不在本地代码目录中，可以通过如下命令进行代码合并&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull --rebase origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;第二个问题&quot;&gt;第二个问题&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;! [remote rejected] master -&amp;gt; master (pre-receive hook declined)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在推送代码时报错如上，网上搜到的方法说是项目的 setting 中 master 是受保护的项目，所以开发者无法推送，解决方法是修改 protected 的设置，或者新建一个分支，推送到自己的分支上&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/cppeterpan/p/7289266.html&quot;&gt;解决办法的文章&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-push-报错&quot;&gt;git push 报错&lt;/h2&gt;
+
+&lt;p&gt;gitee 第一次提交代码提交不上去，到 push 这一步老是遇到&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rejected&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;master &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hook&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;declined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;failed&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;refs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这种情况，老是提不上去。那是因为。你的邮箱设置，&lt;strong&gt;不公开我的邮箱&lt;/strong&gt;把这个勾上了，取消勾选就行了。这样导致找不到你的远程地址。所以推不上去&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Oct 2024 14:20:39 +0900</pubDate>
+        <link>https://hintryer.github.io//git%E6%80%BB%E7%BB%93.html</link>
+        <guid isPermaLink="true">https://hintryer.github.io//git%E6%80%BB%E7%BB%93.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>主题设置</title>
+        <description>&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 24 Oct 2024 00:00:00 +0900</pubDate>
+        <link>https://hintryer.github.io//%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html</link>
+        <guid isPermaLink="true">https://hintryer.github.io//%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>H2O-ac theme for Jekyll</title>

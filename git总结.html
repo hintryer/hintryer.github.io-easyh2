@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git总结 - Hin小站</title>
+    <meta name="author" content="Hin">
+    
+    <meta name="description" content="git总结">
+    <meta name="keywords"
+        content="">
+    
+    
+    <meta property="og:next_url" content="/%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html">
+    
+    
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2024-10-24 14:20:39 +0900" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="git总结 - Hin小站">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hintryer.github.io//git%E6%80%BB%E7%BB%93.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="时间太瘦，指缝太宽。">
+    <meta property="og:site_name" content="Hin小站">
+    <meta property="og:gray" content="false">
+    <meta property="og:lang" content="zh-Hans">
+    
+    
+    <meta name="theme-color" content="" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
+    
+    
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-one-light.min.css" />
+
+
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
+
+    
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+    
+    <body class="line-numbers" ontouchstart="">
+    
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+        
+        
+        <div id="all" class="post" data-theme="default">
+        
+            
+            
+            <div class="alert-tip" id="no-previous"></div>
+            <div class="alert-tip" id="no-next"></div>
+        
+            <input id="nm-switch" type="hidden" value="false">
+            <header class="g-header" data-theme="default">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    
+        <div id="search-toggle"></div>
+    
+    
+    <div id="mode-toggle">
+        <svg class="icon icon-day" aria-hidden="true">
+            <use xlink:href="#icon-day"></use>
+        </svg>
+        <svg class="icon icon-night" aria-hidden="true">
+            <use xlink:href="#icon-night"></use>
+        </svg>
+    </div>
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="首页">
+                        首页
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="博客">
+                        博客
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="归档">
+                        归档
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="标签">
+                        标签
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#"> 工具 </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/cv.html" aria-label="CV">
+                                CV
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/links.html" aria-label="links">
+                                links
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+            
+            <li id="search"></li>
+            
+        </ul>
+    </nav>
+</header>
+
+            
+
+
+<div class="g-banner post-header post-pattern- bgcolor-default post-no-cover"
+    data-theme="default">
+    <div class="post-wrapper">
+        <div class="post-tags">
+            
+        </div>
+        <h1>git总结</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+                Hin
+            </span>
+            <time class="post-meta-item" datetime=" 24-10-24">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime=" 24-10-24">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                
+                  5.2k   </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                         15 
+                    </span>
+                    
+                    
+        </div>
+    </div>
+    
+</div>
+
+<main class="post-content visible">
+    
+
+    
+
+    <div class="container">
+        
+<div class="submenu hidden">
+
+</div>
+        <div class="contents">
+            <article class="markdown-body post">
+                
+
+
+                <h2 id="总结">总结</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">init</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m "提交说明"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote rm origin
+git remote add origin git@gitee.com:mroph/novel.git
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull --rebase origin master
+git push -u origin master
+</code></pre></div></div>
+
+<h2 id="详细步骤">详细步骤</h2>
+
+<h3 id="初始化">初始化</h3>
+
+<h4 id="定位工作目录">定位工作目录</h4>
+
+<p>打开 Git Bash 终端，使用 <code class="language-plaintext highlighter-rouge">cd</code>命令加上要切换的路径，例如：<code class="language-plaintext highlighter-rouge">cd /c/Users/username/Documents</code>；按下回车键，即可切换到指定的路径。需要注意的是路径中需要使用正斜杠 / 分隔路径，而不是反斜杠 \。</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">pwd</code>可以显示当前路径</p>
+
+<h4 id="初始化用户信息">初始化用户信息</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name 'better'
+git config --global user.email '1063266220@qq.com'
+</code></pre></div></div>
+
+<h3 id="创建本地仓库">创建本地仓库</h3>
+
+<p>创建本地仓库的方法有两种：</p>
+
+<ul>
+  <li>一种是创建全新的仓库：<code class="language-plaintext highlighter-rouge">git init</code>，会在当前目录初始化创建仓库，也可指定目录：<code class="language-plaintext highlighter-rouge">git init [文件目录]</code>执行命令后，如下显示</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+</code></pre></div></div>
+
+<p>创建完多出了一个被隐藏的.git 目录，这就是本地仓库 Git 的工作场所，而且是一个空的仓库（empty Git repository）。没事千万不要手动修改这个目录里面的文件，不然改乱了，就把 Git 仓库给破坏了。</p>
+
+<ul>
+  <li>另一种是克隆远程仓库：<code class="language-plaintext highlighter-rouge">git clone [url]</code>
+克隆远程仓库，如在 github 上创建的仓库“<code class="language-plaintext highlighter-rouge">https://github.com/kwonganding/KWebNote.git</code>”</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone 'https://github.com/kwonganding/KWebNote.git'
+Cloning into 'KWebNote'...
+remote: Enumerating objects: 108, done.
+remote: Counting objects: 100% (108/108), done.
+remote: Compressing objects: 100% (60/60), done.
+remote: Total 108 (delta 48), reused 88 (delta 34), pack-reused 0
+Receiving objects: 100% (108/108), 9.36 KiB | 736.00 KiB/s, done.
+Resolving deltas: 100% (48/48), done.
+</code></pre></div></div>
+
+<p>会在当前目录下创建“KWebNote”项目目录。</p>
+
+<h3 id="暂存区-add">暂存区 add</h3>
+
+<p>把工作区变化放到暂存区中，执行命令<code class="language-plaintext highlighter-rouge">git add .</code>可以一次性把所有变化文件放入暂存区</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add .
+</code></pre></div></div>
+
+<p>执行上面的命令，没有任何显示，说明添加成功。也可以先执行<code class="language-plaintext highlighter-rouge">git rm --cached &lt;file&gt;</code>命令将指定的<code class="language-plaintext highlighter-rouge">file</code>从当前的暂存区中删除但保留文件在本地工作目录中。
+| <strong>指令</strong> | <strong>描述</strong> |
+| — | — |
+| git add [file1] [file2] | 添加文件到暂存区，包括修改的文件、新增的文件 |
+| git add [dir] | 同上，添加目录到暂存区，包括子目录 |
+| git add . | 同上，添加<strong>所有</strong>修改、新增文件（未跟踪）到暂存区 |
+| git rm [file] | 删除工作区文件，并且将这次删除放入暂存区 |
+|git rm –cached [file]|删除放入暂存区 ，但该文件会保留在工作区|</p>
+
+<h3 id="提交-commit-记录">提交 commit-记录</h3>
+
+<p>把暂存区内容提交到版本库，命令如下（此处文字说明可以不加引号）</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m '提交的内容说明'
+</code></pre></div></div>
+
+<p>执行上面的命令，如下显示</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m "wrote a readme file"
+[master (root-commit) eaadf4e] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">git commit</code>命令执行成功后会告诉你，<code class="language-plaintext highlighter-rouge">1 file changed</code>：1 个文件被改动（我们新添加的 readme.txt 文件）；<code class="language-plaintext highlighter-rouge">2 insertions</code>：插入了两行内容（readme.txt 有两行内容）。
+以上命令相当于存档了一次，在版本库中产生一次提交记录并生成版本号。本次存档，不耽误我们在工作区 (项目文件夹) 下继续编写项目</p>
+
+<p>如果改的代码过多，忘记改过哪些了，可以运行<code class="language-plaintext highlighter-rouge">git status</code>命令来查看 git 仓库变化，只能看未提交的所有变更的文件状态
+| <strong>指令</strong> | <strong>描述</strong> |
+| — | — |
+| git commit -m ‘说明’ | 提交变更，参数<code class="language-plaintext highlighter-rouge">-m</code>设置提交的描述信息，应该正确提交，不带该参数会进入说明编辑模式 |
+| git commit -a | 参数<code class="language-plaintext highlighter-rouge">-a</code>，表示直接从工作区提交到版本库，略过了<code class="language-plaintext highlighter-rouge">git add</code>步骤，不包括新增的文件 |
+| git commit [file] | 提交暂存区的指定文件到仓库区 |
+| git commit –amend -m | 使用一次新的<code class="language-plaintext highlighter-rouge">commit</code>，替代上一次提交，会修改<code class="language-plaintext highlighter-rouge">commit</code>的<code class="language-plaintext highlighter-rouge">hash</code>值（id） |
+| git <strong>reflog</strong> | 查看所有可用的历史版本记录（实际是 HEAD 变更记录），包含被回退的记录（<strong>重要</strong>） |
+| git status | 查看本地仓库状态，比较常用的指令，加参数<code class="language-plaintext highlighter-rouge">-s</code>简洁模式 |</p>
+
+<h3 id="将本地代码仓库关联到-gitee-上git-remote-add">将本地代码仓库关联到 gitee 上<code class="language-plaintext highlighter-rouge">git remote add</code>
+</h3>
+
+<ul>
+  <li>第一次提交直接执行以下命令关联</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git remote add origin 仓库地址
+</code></pre></div></div>
+
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<code class="language-plaintext highlighter-rouge">git push origin master</code>推送最新修改；</p>
+
+<ul>
+  <li>第二次提交先删除，再关联</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote rm origin
+git remote add origin 仓库地址
+</code></pre></div></div>
+
+<p>否则会在使用命令<code class="language-plaintext highlighter-rouge">git remote add</code>时报错：<code class="language-plaintext highlighter-rouge">fatal: remote origin already exists.</code>，说明本地库已经关联了一个名叫<code class="language-plaintext highlighter-rouge">origin</code>的远程库，</p>
+
+<h3 id="将代码由本地仓库上传到-gitee-远程仓库">将代码由本地仓库上传到 gitee 远程仓库</h3>
+
+<p>执行以下命令，先拉取后推送</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull --rebase origin master
+git push -u origin master
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>远程仓库指令</strong></th>
+      <th><strong>描述</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git clone [git 地址]</td>
+      <td>从远程仓库克隆到本地（当前目录）</td>
+    </tr>
+    <tr>
+      <td>git remote -v</td>
+      <td>查看所有远程仓库，不带参数<code class="language-plaintext highlighter-rouge">-v</code>只显示名称</td>
+    </tr>
+    <tr>
+      <td>git remote show [remote]</td>
+      <td>显示某个远程仓库的信息</td>
+    </tr>
+    <tr>
+      <td><strong>git remote add [name] [url]</strong></td>
+      <td>增加一个新的远程仓库，并命名</td>
+    </tr>
+    <tr>
+      <td>git remote rename [old] [new]</td>
+      <td>修改远程仓库名称</td>
+    </tr>
+    <tr>
+      <td><strong>git pull [remote] [branch]</strong></td>
+      <td>取回远程仓库的变化，并与本地版本合并</td>
+    </tr>
+    <tr>
+      <td><strong>git pull</strong></td>
+      <td>同上，针对当前分支</td>
+    </tr>
+    <tr>
+      <td>git fetch [remote]</td>
+      <td>获取远程仓库的所有变动到本地仓库，不会自动合并！需要手动合并</td>
+    </tr>
+    <tr>
+      <td><strong>git push</strong></td>
+      <td>推送当前分支到远程仓库</td>
+    </tr>
+    <tr>
+      <td>git push [remote] [branch]</td>
+      <td>推送本地当前分支到远程仓库的指定分支</td>
+    </tr>
+    <tr>
+      <td>git push [remote] –force/-f</td>
+      <td>强行推送当前分支到远程仓库，即使有冲突，⚠️ 很危险！</td>
+    </tr>
+    <tr>
+      <td>git push [remote] –all</td>
+      <td>推送所有分支到远程仓库</td>
+    </tr>
+    <tr>
+      <td>git push –u</td>
+      <td>参数<code class="language-plaintext highlighter-rouge">–u</code>表示与远程分支建立关联，第一次执行的时候用，后面就不需要了</td>
+    </tr>
+    <tr>
+      <td>git remote rm [remote-name]</td>
+      <td>删除远程仓库</td>
+    </tr>
+    <tr>
+      <td>git pull –rebase</td>
+      <td>使用 rebase 的模式进行合并</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="错误">错误</h1>
+
+<h2 id="git-init-报错">git init 报错</h2>
+
+<p>当我们在一个目录下初始化 git 时 可能会出现这个报错，</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">git</span> <span class="nx">init</span>
+<span class="nx">warning</span><span class="p">:</span> <span class="nx">templates</span> <span class="nx">not</span> <span class="nx">found</span> <span class="k">in</span> <span class="sr">/home/</span><span class="nx">ja</span><span class="o">/</span><span class="nx">share</span><span class="o">/</span><span class="nx">git</span><span class="o">-</span><span class="nx">core</span><span class="o">/</span><span class="nx">templates</span>
+<span class="nx">hint</span><span class="p">:</span> <span class="nx">Using</span> <span class="dl">'</span><span class="s1">master</span><span class="dl">'</span> <span class="nx">as</span> <span class="nx">the</span> <span class="nx">name</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">initial</span> <span class="nx">branch</span><span class="p">.</span> <span class="nx">This</span> <span class="k">default</span> <span class="nx">branch</span> <span class="nx">name</span>
+<span class="nx">hint</span><span class="p">:</span> <span class="nx">is</span> <span class="nx">subject</span> <span class="nx">to</span> <span class="nx">change</span><span class="p">.</span> <span class="nx">To</span> <span class="nx">configure</span> <span class="nx">the</span> <span class="nx">initial</span> <span class="nx">branch</span> <span class="nx">name</span> <span class="nx">to</span> <span class="nx">use</span> <span class="k">in</span> <span class="nx">all</span>
+<span class="nx">hint</span><span class="p">:</span> <span class="k">of</span> <span class="nx">your</span> <span class="k">new</span> <span class="nx">repositories</span><span class="p">,</span> <span class="nx">which</span> <span class="nx">will</span> <span class="nx">suppress</span> <span class="k">this</span> <span class="nx">warning</span><span class="p">,</span> <span class="nx">call</span><span class="p">:</span>
+<span class="nx">hint</span><span class="p">:</span>
+<span class="nx">hint</span><span class="p">:</span>   <span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nb">global</span> <span class="nx">init</span><span class="p">.</span><span class="nx">defaultBranch</span> <span class="o">&lt;</span><span class="nx">name</span><span class="o">&gt;</span>
+<span class="nx">hint</span><span class="p">:</span>
+<span class="nx">hint</span><span class="p">:</span> <span class="nx">Names</span> <span class="nx">commonly</span> <span class="nx">chosen</span> <span class="nx">instead</span> <span class="k">of</span> <span class="dl">'</span><span class="s1">master</span><span class="dl">'</span> <span class="nx">are</span> <span class="dl">'</span><span class="s1">main</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">trunk</span><span class="dl">'</span> <span class="nx">and</span>
+<span class="nx">hint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">development</span><span class="dl">'</span><span class="p">.</span> <span class="nx">The</span> <span class="nx">just</span><span class="o">-</span><span class="nx">created</span> <span class="nx">branch</span> <span class="nx">can</span> <span class="nx">be</span> <span class="nx">renamed</span> <span class="nx">via</span> <span class="k">this</span> <span class="nx">command</span><span class="p">:</span>
+<span class="nx">hint</span><span class="p">:</span>
+<span class="nx">hint</span><span class="p">:</span>   <span class="nx">git</span> <span class="nx">branch</span> <span class="o">-</span><span class="nx">m</span> <span class="o">&lt;</span><span class="nx">name</span><span class="o">&gt;</span>
+<span class="nx">Initialized</span> <span class="nx">empty</span> <span class="nx">Git</span> <span class="nx">repository</span> <span class="k">in</span> <span class="sr">/tmp/</span><span class="k">new</span><span class="sr">/.git/</span>
+</code></pre></div></div>
+
+<p><strong>解决：</strong> 执行<code class="language-plaintext highlighter-rouge">git config --global init.defaultBranch master</code> 命令，设置默认分支为 master 级别就不会再报错了</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nb">global</span> <span class="nx">init</span><span class="p">.</span><span class="nx">defaultBranch</span> <span class="nx">master</span>
+</code></pre></div></div>
+
+<h2 id="git-add-报错">git add .报错</h2>
+
+<p>git add .报错 <code class="language-plaintext highlighter-rouge">warning: adding embedded git repository\:xxxxxxxxxx</code></p>
+
+<p>执行- $ git add .命令时出现出现这个报错</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>warning: adding embedded git repository:xxxxxxxxxx
+hint: You<span class="s1">'ve added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: git submodule add &lt;url&gt;xxxxxxxxxx
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: git rm --cached   xxxx
+hint:
+hint: See "git help submodule" for more information.
+</span></code></pre></div></div>
+
+<p><strong>原因：</strong> 使用 <code class="language-plaintext highlighter-rouge">git add .</code> 时，出现上述错误。是因为在当前 <code class="language-plaintext highlighter-rouge">git</code> 仓库中同时包含有另一个<code class="language-plaintext highlighter-rouge">git</code>仓库。如当前仓库目录下的子文件夹内又是一个仓库。</p>
+
+<p><strong>解决：</strong> 删除子文件夹的.git 文件， 重新执行<code class="language-plaintext highlighter-rouge">git add .</code></p>
+
+<h2 id="git-remote-add时报错">
+<code class="language-plaintext highlighter-rouge">git remote add</code>时报错：</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+fatal: remote origin already exists.
+</code></pre></div></div>
+
+<p>这说明本地库已经关联了一个名叫<code class="language-plaintext highlighter-rouge">origin</code>的远程库，可以用<code class="language-plaintext highlighter-rouge">git remote rm &lt;name&gt;</code>命令已有的远程库。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote -v
+origin	git@github.com:michaelliao/learngit.git (fetch)
+origin	git@github.com:michaelliao/learngit.git (push)
+</code></pre></div></div>
+
+<p>可以看到，本地库已经关联了<code class="language-plaintext highlighter-rouge">origin</code>的远程库，并且，该远程库指向 GitHub。我们可以删除已有的 GitHub 远程库再关联 Gitee 的远程库</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote rm origin
+git remote add origin 仓库地址
+</code></pre></div></div>
+
+<h2 id="git-上传报错">git 上传报错</h2>
+
+<h3 id="第一个问题">第一个问题</h3>
+
+<p>上传步骤：<br>
+<code class="language-plaintext highlighter-rouge">git add .</code><br>
+<code class="language-plaintext highlighter-rouge">git commit -m "提示消息"</code><br>
+<code class="language-plaintext highlighter-rouge">git push origin master</code></p>
+
+<p>出错：<br>
+<code class="language-plaintext highlighter-rouge">! [rejected] master -&gt; master (fetch first) error: failed to push some refs to ' 。。。'</code></p>
+
+<p>出现这个问题是因为 github 中的 README.md 文件不在本地代码目录中，可以通过如下命令进行代码合并</p>
+
+<p><code class="language-plaintext highlighter-rouge">git pull --rebase origin master</code></p>
+
+<h3 id="第二个问题">第二个问题</h3>
+
+<p><code class="language-plaintext highlighter-rouge">! [remote rejected] master -&gt; master (pre-receive hook declined)</code></p>
+
+<p>在推送代码时报错如上，网上搜到的方法说是项目的 setting 中 master 是受保护的项目，所以开发者无法推送，解决方法是修改 protected 的设置，或者新建一个分支，推送到自己的分支上</p>
+
+<p><a href="https://www.cnblogs.com/cppeterpan/p/7289266.html" rel="nofollow" target="_blank" class="extlinks">解决办法的文章</a></p>
+
+<h2 id="git-push-报错">git push 报错</h2>
+
+<p>gitee 第一次提交代码提交不上去，到 push 这一步老是遇到</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">!</span> <span class="err">\</span><span class="p">[</span><span class="nx">remote</span> <span class="nx">rejected</span><span class="err">\</span><span class="p">]</span> <span class="nx">master</span> <span class="o">-&gt;</span> <span class="nf">master </span><span class="p">(</span><span class="nx">hook</span> <span class="nx">declined</span><span class="p">)</span>
+<span class="nx">error</span><span class="p">:</span> <span class="nx">failed</span> <span class="nx">to</span> <span class="nx">push</span> <span class="nx">some</span> <span class="nx">refs</span> <span class="nx">to</span>
+</code></pre></div></div>
+
+<p>这种情况，老是提不上去。那是因为。你的邮箱设置，<strong>不公开我的邮箱</strong>把这个勾上了，取消勾选就行了。这样导致找不到你的远程地址。所以推不上去</p>
+
+                <div class="post-copyright">
+                    <p>
+                        <span>：</span>
+                        
+                        <a href="https://hintryer.github.io/" class="cplink">Hin小站</a>
+                        
+                    </p>
+                    
+                    <p><span>：</span>《 git总结 》</p>
+                    <p><span>：</span><a href="https://hintryer.github.io//git%E6%80%BB%E7%BB%93.html" class="cplink">https://hintryer.github.io//git%E6%80%BB%E7%BB%93.html</a></p>
+                    <p class="tips"> <span></span> 
+                    </p>
+                </div>
+            </article>
+        </div>
+        
+            <div class="table-of-contents">
+                <div class="toc-header"><h2></h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('总结')">总结</a></li><li><a onclick="scrollToAdjust('详细步骤')">详细步骤</a><ul><li><a onclick="scrollToAdjust('初始化')">初始化</a><ul><li><a onclick="scrollToAdjust('定位工作目录')">定位工作目录</a></li><li><a onclick="scrollToAdjust('初始化用户信息')">初始化用户信息</a></li></ul></li><li><a onclick="scrollToAdjust('创建本地仓库')">创建本地仓库</a></li><li><a onclick="scrollToAdjust('暂存区-add')">暂存区 add</a></li><li><a onclick="scrollToAdjust('提交-commit-记录')">提交 commit-记录</a></li><li><a onclick="scrollToAdjust('将本地代码仓库关联到-gitee-上<code-class="language-plaintext-highlighter-rouge">git-remote-add</code>')">将本地代码仓库关联到 gitee 上<code class="language-plaintext highlighter-rouge">git remote add</code></a></li><li><a onclick="scrollToAdjust('将代码由本地仓库上传到-gitee-远程仓库')">将代码由本地仓库上传到 gitee 远程仓库</a></li></ul></li><li><a onclick="scrollToAdjust('git-init-报错')">git init 报错</a></li><li><a onclick="scrollToAdjust('git-add-.报错')">git add .报错</a></li><li><a onclick="scrollToAdjust('<code-class="language-plaintext-highlighter-rouge">git-remote-add</code>时报错')"><code class="language-plaintext highlighter-rouge">git remote add</code>时报错：</a></li><li><a onclick="scrollToAdjust('git-上传报错')">git 上传报错</a><ul><li><a onclick="scrollToAdjust('第一个问题')">第一个问题</a></li><li><a onclick="scrollToAdjust('第二个问题')">第二个问题</a></li></ul></li><li><a onclick="scrollToAdjust('git-push-报错')">git push 报错</a></li></ul>
+                </div>
+        
+            </div>
+        </div>
+        
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
+        <div class="avatar">
+            <img src="/assets/img/profile.webp" alt="">
+        </div>
+        <div class="author-name" rel="author">Hin</div>
+        <div class="bio">
+            <p>人类美学的奇迹</p>
+        </div>
+        
+    </section>
+    <section class="post-footer-item read-next">
+        
+
+        
+        <div class="read-next-item">
+            <a href="/%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html" class="read-next-link"
+                aria-label="主题设置"></a>
+            <section>
+                <span>主题设置</span>
+                <p>code</p>
+            </section>
+            
+        </div>
+        
+    </section>
+    
+
+
+    
+
+
+
+    
+    
+
+</section>
+            
+
+
+<footer class="g-footer">
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.3.5" target="_blank" class="extlinks">v1.3.5</a>)  
+        
+      </section>
+      <section class="links">Hin小站 ©
+        
+        
+        2024
+        
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS  
+        </a>
+        <a href="/tos" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg>   
+        </a>
+      </section>
+      
+      <section>
+        
+      </section>
+    </div>
+    <div class="g-right">
+      
+      
+    </div>
+    
+  </div>
+</footer>
+<div class="cookie-tip">
+   「 <a href="/tos.html"></a> 」
+
+  <button id="accept-tos"></button>
+</div>
+
+<section id="tools">
+  
+  
+  <div class="tool toc">
+    <svg class="icon b1 active" aria-hidden="true">
+      <use xlink:href="#icon-toc"></use>
+    </svg>
+    <svg class="icon b2" aria-hidden="true">
+      <use xlink:href="#icon-exit"></use>
+    </svg>
+  </div>
+  
+</section>
+<section id="bttb" aria-label="Scroll back to top" class="bttb">
+  <div class="tool">
+    <svg class="icon top" aria-hidden="true">
+      <use xlink:href="#icon-top"></use>
+    </svg>
+  </div>
+</section>
+        </div>
+        
+<div class="modal">
+    <div class="modal-content">
+        <header>
+            <span class="close">&times;</span>
+        </header>
+        <div class="container"></div>
+    </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/hintryer/hintryer.github.io/commits?path=_posts/2024-10-10-git总结.md").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>
+            <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<script>
+    socialShare('.social-share', {
+        sites: [
+            
+            'wechat', 
+            
+            'weibo', 
+            
+            'douban', 
+            
+            'twitter'
+            
+        ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+        wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+      });
+    $("a.social-share-icon").each(function () {
+        $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
+</script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="/assets/js/app.min.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
+        
+
+
+        
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax-full@3.2.2/es5/tex-mml-svg.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
+<script>
+    $(document).ready(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+        });
+        mermaid.init(undefined, $('.mermaid2'));
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        
+
+<script>
+    $(document).ready(function () {
+        if ($("#comments-switch").length > 0) {
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if (comment_status) {
+                $("#waline").addClass("active");
+            } else {
+                $("#disqus_thread").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function () {
+                $("#disqus_thread").toggleClass("active");
+                $("#waline").toggleClass("active");
+            })
+        } else {
+            if ($("#disqus_thread").length > 0) {
+                $("#disqus_thread").addClass("active");
+            } else if ($("#waline").length > 0) {
+                $("#waline").addClass("active");
+            }
+        }
+    })
+</script>
+        <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+        
+<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'{GIVEN WEBPUSHER ID}' });</script><!-- end webpushr code -->
+
+        
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+    docsearch({
+        appId: "{GIVEN APPID}",
+        apiKey: "{GIVEN API KEY}",
+        indexName: "indexName",
+        container: 'li#search',
+        debug: true,
+    });
+    docsearch({
+        appId: "{GIVEN APPID}",
+        apiKey: "{GIVEN API KEY}",
+        indexName: "indexName",
+        container: '#search-toggle',
+        debug: true,
+    });
+</script>
+
+  </body>
+
+</html>

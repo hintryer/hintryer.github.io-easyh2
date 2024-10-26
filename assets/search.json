@@ -1,5 +1,17 @@
 [
   {
+    "title"    : "git总结",
+    "tags"     : "",
+    "url"      : "/git%E6%80%BB%E7%BB%93.html"
+  } ,
+
+  {
+    "title"    : "主题设置",
+    "tags"     : "",
+    "url"      : "/%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html"
+  } ,
+
+  {
     "title"    : "H2O-ac theme for Jekyll",
     "tags"     : "jekyll theme blog ac develop 主题 前端开发 学术 运维",
     "url"      : "/tech/new-theme-h2o-ac.html"
