@@ -1,0 +1,20 @@
+<p>mathjax in markdown :)</p>
+
+<p><strong>这是一个不<code class="language-plaintext highlighter-rouge">align</code>的公式</strong>：</p>
+
+\[\forall \alpha \in A, \quad a \cdot b = 0\]
+
+<p><strong>这是一个<code class="language-plaintext highlighter-rouge">align</code>的公式</strong>：</p>
+
+\[\begin{align}
+    \Phi(0,x) = \max_{u \in \mathcal{D}} \bigg[
+        \mathbb{E} &amp; \Phi\left(1, 
+        x + \int_0^1 \sigma^2(s) \, \zeta(s) \, u_s \, ds
+        + \int_0^1 \sigma(s) \, dW_s
+    \right) \\
+        &amp;- \frac{1}{2} \int_0^1 \sigma^2(s) \, \zeta(s) \,
+        \mathbb{E} u_s^2  \, ds
+    \bigg].
+\end{align}\]
+
+<p><strong>注意：</strong>公式块要想有较好的显示效果，必须在公式块标记符<code class="language-plaintext highlighter-rouge">$$</code><strong>前后</strong>留有空行，否则公式将不能正常居中。行内公式无此问题。</p>
